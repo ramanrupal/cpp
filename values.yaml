@@ -1,0 +1,22 @@
+appName: cpp
+environment: dev1
+namespace: devsecops
+
+containerFrontend:
+  name: frontend
+  nodePort: 30012
+  image:
+    imageName: localhost:5555/cpp-frontend:1
+    imagePullPolicy: IfNotPresent
+  containerPort: 80
+  replicas: 1
+
+containerBackend:
+  name: backend
+  image:
+    imageName: localhost/cpp-app:1
+    pullPolicy: IfNotPresent
+  containerPort: 5000
+  replicas: 1
+
+
